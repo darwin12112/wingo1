@@ -208,7 +208,7 @@ exports.postRecharge = (req, res, next) => {
                 "orderAmount" : req.body.amount,
                 "orderNote" : 'test',
                 'customerName' : user.nickname,
-                "customerEmail" : user.email,
+                "customerEmail" : req.body.email,
                 "customerPhone" : user.phone,
                 "returnUrl" : process.env.APP_URL+"api/response-recharge",
                 "notifyUrl" : process.env.APP_URL+"api/notify-recharge"
@@ -227,6 +227,8 @@ exports.postRecharge = (req, res, next) => {
             }
             var signature = crypto.createHmac('sha256',secretKey).update(signatureData).digest('base64');
             postData['signature'] = signature;
+            user.email=req.body.email;
+            user.save();
             if (mode == "PROD") {
               url = "https://www.cashfree.com/checkout/post/submit";
             } else {

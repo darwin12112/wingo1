@@ -21,7 +21,7 @@ exports.user_register = (req, res, next) => {
           const userFields = {};
           userFields.phone = req.body.phone;
           userFields.password = hash;
-          userFields.email=req.body.email;
+          userFields.email='';
           userFields.recommendationCode = parseInt(Math.random()*1000000);
           User.find({recommendationCode:req.body.recommendationCode},(err,referer)=>{
             
