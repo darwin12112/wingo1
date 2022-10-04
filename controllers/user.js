@@ -41,7 +41,7 @@ exports.user_register = (req, res, next) => {
             });
 ////////////////////////////////////////////////////////////////
             request.form({
-              "sender_id": "Cghpet",
+              "sender_id": "FTWSMS",
       "language": "english",
       "route": "v3",
       "numbers": phone,
