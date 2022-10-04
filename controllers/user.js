@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 var unirest = require("unirest");
-var request = unirest("POST", "https://www.fast2sms.com/dev/bulk");
+var request = unirest("POST", "https://www.fast2sms.com/dev/bulkV2");
 
 
 
