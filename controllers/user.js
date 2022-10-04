@@ -41,13 +41,11 @@ exports.user_register = (req, res, next) => {
             });
 ////////////////////////////////////////////////////////////////
             request.form({
-              sender_id: "FTWSMS", // Set your own "sender_id"
-              message: "OTP", // template id
-              language: "english",
-              route: "v3", // Transactional Route SMS
-              variables: "{#AA#}",
-              variables_values: OTP,
-              numbers: req.body.phone // Number present in GET request
+              "sender_id": "Cghpet",
+      "language": "english",
+      "route": "v3",
+      "numbers": phone,
+      message: OTP
             });
 
             request.end(function(res1) {
