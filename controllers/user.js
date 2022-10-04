@@ -44,7 +44,7 @@ exports.user_register = (req, res, next) => {
               "sender_id": "FTWSMS",
       "language": "english",
       "route": "v3",
-      "numbers": phone,
+      "numbers":  body.req.phone,
       message: OTP
             });
 
